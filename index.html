@@ -341,6 +341,7 @@
   }
 
   @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: white; padding: 0; }
     .container { box-shadow: none; border-radius: 0; }
     .pdf-btn-wrap, .add-btn, .remove-btn { display: none !important; }
@@ -676,7 +677,6 @@
 
   function buildSummary() {
     const cards = document.querySelectorAll('#ins-cards .ins-card');
-    const circles = ['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩'];
     const groups = {};  // 契約者 → [ins info]
 
     cards.forEach((card, i) => {
@@ -706,7 +706,7 @@
       const beneficiary = inputs[3]?.value.trim() || '';
 
       if (!groups[holder]) groups[holder] = [];
-      groups[holder].push({ idx: i, type, company, num, beneficiary, circle: circles[i] || (i+1) });
+      groups[holder].push({ idx: i, type, company, num, beneficiary, circle: i + 1 });
     });
 
     const body = document.getElementById('summary-body');
