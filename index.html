@@ -234,7 +234,7 @@
     background: var(--yellow-soft); padding: 10px 12px;
     display: flex; align-items: flex-end; gap: 8px;
   }
-  .contact-cell label { font-size: 11px; font-weight: bold; color: var(--teal-dark); white-space: nowrap; }
+  .contact-cell label { font-size: 11px; font-weight: bold; color: var(--teal-dark); white-space: nowrap; width: 5em; flex-shrink: 0; }
   .contact-cell input {
     flex: 1; border: none; border-bottom: 1.5px solid var(--teal);
     background: transparent; font-size: 13px;
@@ -365,7 +365,8 @@
     
     /* メタ情報 */
     .meta-row { flex-direction: column; gap: 8px; padding: 10px 16px; }
-    .meta-row input { font-size: 15px; padding: 6px 8px; }
+    .meta-row label { text-align: center; }
+    .meta-row input { font-size: 15px; padding: 6px 8px; text-align: center; }
     .meta-divider { display: none; }
     
     /* セクションヘッダー */
